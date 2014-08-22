@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scotchApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Silex Workshop - phpSummerCamp 2014</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="scripts/jquery-2.1.1.min.js"></script>
+    </head>
+
+    <body ng-controller="mainController">
+
+        
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand">Silex Workshop</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+                            <li>
+            
+            <a href="ssi-exemple">SSI exemple</a></li>
+        
+                            <li>
+            
+            <a href="esi-exemple">ESI exemple</a></li>
+        
+                            <li>
+            
+            <a href="ajax-exemple">AJAX exemple</a></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        <div class="container">
+
+        <hr>
+
+        <div class="page-header" id="banner">
+            <p class="lead">ESI exemple</p>
+        </div>
+
+        
+
+
+<blockquote>Load file with ESI</blockquote>
+<?php echo $this->esi->handle($this, '/renderesi/esi-exemple', '', false) ?>
+
+
+
+
+        
+        <hr>
+
+        <footer>
+            <p>&copy; Kaliop // phpSummerCamp 2014</p>
+        </footer>
+
+        </div>
+
+    
+<div id="sfwdtfb4a42" class="sf-toolbar" style="display: none"></div><script>/*<![CDATA[*/    Sfjs = (function() {        "use strict";        var noop = function() {},            profilerStorageKey = 'sf2/profiler/',            request = function(url, onSuccess, onError, payload, options) {                var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');                options = options || {};                options.maxTries = options.maxTries || 0;                xhr.open(options.method || 'GET', url, true);                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');                xhr.onreadystatechange = function(state) {                    if (4 !== xhr.readyState) {                        return null;                    }                    if (xhr.status == 404 && options.maxTries > 1) {                        setTimeout(function(){                            options.maxTries--;                            request(url, onSuccess, onError, payload, options);                        }, 500);                        return null;                    }                    if (200 === xhr.status) {                        (onSuccess || noop)(xhr);                    } else {                        (onError || noop)(xhr);                    }                };                xhr.send(payload || '');            },            hasClass = function(el, klass) {                return el.className && el.className.match(new RegExp('\\b' + klass + '\\b'));            },            removeClass = function(el, klass) {                if (el.className) {                    el.className = el.className.replace(new RegExp('\\b' + klass + '\\b'), ' ');                }            },            addClass = function(el, klass) {                if (!hasClass(el, klass)) {                    el.className += " " + klass;                }            },            getPreference = function(name) {                if (!window.localStorage) {                    return null;                }                return localStorage.getItem(profilerStorageKey + name);            },            setPreference = function(name, value) {                if (!window.localStorage) {                    return null;                }                localStorage.setItem(profilerStorageKey + name, value);            };        return {            hasClass: hasClass,            removeClass: removeClass,            addClass: addClass,            getPreference: getPreference,            setPreference: setPreference,            request: request,            load: function(selector, url, onSuccess, onError, options) {                var el = document.getElementById(selector);                if (el && el.getAttribute('data-sfurl') !== url) {                    request(                        url,                        function(xhr) {                            el.innerHTML = xhr.responseText;                            el.setAttribute('data-sfurl', url);                            removeClass(el, 'loading');                            (onSuccess || noop)(xhr, el);                        },                        function(xhr) { (onError || noop)(xhr, el); },                        '',                        options                    );                }                return this;            },            toggle: function(selector, elOn, elOff) {                var i,                    style,                    tmp = elOn.style.display,                    el = document.getElementById(selector);                elOn.style.display = elOff.style.display;                elOff.style.display = tmp;                if (el) {                    el.style.display = 'none' === tmp ? 'none' : 'block';                }                return this;            }        }    })();/*]]>*/</script><script>/*<![CDATA[*/    (function () {                Sfjs.load(            'sfwdtfb4a42',            '/_profiler/wdt/fb4a42',            function(xhr, el) {                el.style.display = -1 !== xhr.responseText.indexOf('sf-toolbarreset') ? 'block' : 'none';                if (el.style.display == 'none') {                    return;                }                if (Sfjs.getPreference('toolbar/displayState') == 'none') {                    document.getElementById('sfToolbarMainContent-fb4a42').style.display = 'none';                    document.getElementById('sfToolbarClearer-fb4a42').style.display = 'none';                    document.getElementById('sfMiniToolbar-fb4a42').style.display = 'block';                } else {                    document.getElementById('sfToolbarMainContent-fb4a42').style.display = 'block';                    document.getElementById('sfToolbarClearer-fb4a42').style.display = 'block';                    document.getElementById('sfMiniToolbar-fb4a42').style.display = 'none';                }            },            function(xhr) {                if (xhr.status !== 0) {                    confirm('An error occurred while loading the web debug toolbar (' + xhr.status + ': ' + xhr.statusText + ').\n\nDo you want to open the profiler?') && (window.location = '/_profiler/fb4a42');                }            },            {'maxTries': 5}        );    })();/*]]>*/</script>
+</body>
+</html>
