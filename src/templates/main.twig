@@ -1,0 +1,36 @@
+{% extends "layout.twig" %}
+
+{% block mainContent %}
+
+{% if section.render == 'SSI' %}
+
+<blockquote>Load file with SSI</blockquote>
+{{ render(app.request.baseUrl ~ '/ssi/' ~ section.url ) }}
+
+{% endif %}
+
+{% if section.render == 'ESI' %}
+
+<blockquote>Load file with ESI</blockquote>
+{{ render(app.request.baseUrl ~ '/esi/' ~ section.url ) }}
+
+{% endif %}
+
+{% if section.render == 'AJAX' %}
+
+<blockquote>Load file with AJAX</blockquote>
+
+<script>
+$.ajax({
+  url: "{{ app.request.baseUrl ~ '/renderesi/' ~ section.url }}",
+  context: $(this)
+}).done(function(data) {
+  $( "#ajax-container" ).html( data );
+});
+</script>
+
+<div id="ajax-container"></div>
+
+{% endif %}
+
+{% endblock %}

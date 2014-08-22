@@ -1,0 +1,16 @@
+Application:
+  name: "Silex Workshop"
+Menu:
+  - name: "SSI exemple"
+    url: "ssi-exemple"
+    render: "SSI"
+    source: "page-ssi.html"
+  - name: "ESI exemple"
+    url: "esi-exemple"
+    render: "ESI"
+    source: "page-esi.html"
+  - name: "AJAX exemple"
+    url: "ajax-exemple"
+    render: "AJAX"
+    source: "page-ajax.html"
+
