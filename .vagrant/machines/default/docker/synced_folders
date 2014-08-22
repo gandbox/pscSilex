@@ -1,1 +1,0 @@
-{"docker":{"/var/www":{"guestpath":"/var/www","hostpath":"/home/gguirand/silex-workshop","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/gguirand/silex-workshop","disabled":false}}}
