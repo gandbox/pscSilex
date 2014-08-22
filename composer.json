@@ -4,7 +4,8 @@
         "symfony/yaml": "2.5.*",
         "twig/twig": ">=1.8,<2.0-dev",
         "symfony/twig-bridge": "2.2.*",
-        "silex/web-profiler": "~1.0"
+        "silex/web-profiler": "~1.0",
+        "oyejorge/less.php": "~1.5"
     },
     "autoload" : {
     	"psr-0": {

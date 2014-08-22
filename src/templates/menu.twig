@@ -1,0 +1,35 @@
+{% block menuTop %}
+
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand">{{ menu.Application.name }}</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+        
+        {% for menuItem in menu.Menu %}
+
+            {% if section == menuItem.url %}
+                <li class="active">
+            {% else %}
+                <li>
+            {% endif %}
+
+            <a href="{{ menuItem.url }}">{{ menuItem.name }}</a></li>
+        {% endfor %}
+
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

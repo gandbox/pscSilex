@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scotchApp">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ menu.Application.name }} - phpSummerCamp 2014</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="scripts/jquery-2.1.1.min.js"></script>
+    </head>
+
+    <body ng-controller="mainController">
+
+        {% include 'menu.twig' %}
+
+        <div class="container">
+
+        <hr>
+
+        <div class="page-header" id="banner">
+            <p class="lead">{{ section.name }}</p>
+        </div>
+
+        {% block mainContent %}
+
+        {% endblock %}
+        
+        <hr>
+
+        <footer>
+            <p>&copy; Kaliop // phpSummerCamp 2014</p>
+        </footer>
+
+        </div>
+
+    </body>
+</html>
