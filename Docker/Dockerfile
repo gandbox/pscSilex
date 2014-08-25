@@ -1,7 +1,7 @@
 FROM phusion/baseimage:latest
 
-# Proxy config
-RUN echo 'Acquire::http::Proxy "http://10.34.6.100:3128";' > /etc/apt/apt.conf.d/proxy
+# Proxy config : uncomment with your proxy values if needed
+# RUN echo 'Acquire::http::Proxy "http://10.34.6.100:3128";' > /etc/apt/apt.conf.d/proxy
 
 # Download and install php, nginx, and supervisor, hey, just linux for a change!
 
