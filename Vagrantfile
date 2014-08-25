@@ -1,7 +1,7 @@
 Vagrant.configure(2) do |config|
   config.vm.synced_folder "./", "/var/www"
-  config.proxy.http  = "http://10.34.6.100:3128/"
-  config.proxy.https = "https://10.34.6.100:3128/"
+  # config.proxy.http  = "http://10.34.6.100:3128/"
+  # config.proxy.https = "https://10.34.6.100:3128/"
 
   config.vm.provider "docker" do |d|
     d.cmd = ["/sbin/my_init", "--enable-insecure-key"]
