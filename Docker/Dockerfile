@@ -17,6 +17,10 @@ ADD ./nginx/default /etc/nginx/sites-enabled/default
 ADD ./supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 ADD ./php-fpm/php-fpm.conf /etc/php5/fpm/php-fpm.conf
 
+# install composer
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/bin/composer
+
 # Shared volume
 RUN mkdir -p /var/www
 VOLUME ["/var/www"]
