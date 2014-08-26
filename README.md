@@ -1,20 +1,67 @@
 phpSummerCamp Silex Workshop
 ============================
 
-With some very simple exemples, during 1:30h, you will discover how to :
+With some very simple examples, during **1h30**, you will discover how to :
 
-* Run Silex with Vagrant / Docker / phusion ( php-fpm + nginx)
-* Build a simple navigation system from a YAML content tree, Twig for templating & bootstrap for CSS
-* Use Pimple to inject the YAML content within the $app container, and ruese everywhere
-* Provide 3 ways to embed extrernal HTML blocks : SSI / ESI / AJAX, with differents HTTP Cache TTL (use HttpFoundation)
-* Create a generic "service provider" to compile locally the bootstrap .less files with cache / watch changes / compress (use oyejorge/less.php)
+* Run Silex locally with [Vagrant](https://www.vagrantup.com/) / [Docker](https://www.docker.com/) / [phusion](http://phusion.github.io/baseimage-docker/)
+* Run Silex with [php-fpm](http://php-fpm.org/) + [nginx](http://nginx.org/)
+* Build a simple navigation system from a [YAML](http://www.yaml.org/) content tree, [Twig](http://twig.sensiolabs.org/) for templating & [bootstrap](http://getbootstrap.com/) for CSS
+* Use [Pimple](http://pimple.sensiolabs.org/) to inject the [YAML](http://www.yaml.org/) content within the **$app container**, and re-use everywhere
+* Provide 3 ways to embed external HTML blocks : SSI / [ESI](http://fr.wikipedia.org/wiki/Edge_Side_Includes) / AJAX, with HTTP Cache TTL (use [HttpFoundation](http://symfony.com/doc/current/components/http_foundation/introduction.html))
+* Create a generic [service provider](http://silex.sensiolabs.org/doc/providers.html) to compile locally the **bootstrap .less** files with cache / watch changes / compress (use [less.php](https://github.com/oyejorge/less.php))
 
-1) Branch topics :
-------------------
+Branch topics :
+---
 
-* Branch "master" is empty
-* Branch "01-no-esi" is the project with all features, except the HTTP Cache / ESI setup & exemples
-* Branch "02-noless" is the same code, containing HTTP Cache / ESI setup & exemples
-* Branch "03-withless" is the final code exemple, containing the .less processing for boostrap
+* Branch **master** is empty
+* Branch **01-no-esi** is the starting point of the workshop. The AJAX call is in progress (/renderesi route is missing), no ESI setup, no .less compilation
+* Branch **02-no-less** is the same code, containing AJAX & ESI setup example
+* Branch **03-final** is the final code, containing the .less processing for bootstrap
 
+How to run the workshop
+---
 
+#### From the Vagrant/Docker
+
+Check Vagrant & Docker are installed & so :
+```bash
+vagrant up --provider=docker
+```
+
+If you are behind a **proxy**, uncomment & set your proxy values in the Vagrantfile & Dockerfile
+
+#### From the SummerCamp VBox
+
+With SSH go to the Silex folder :
+```bash
+ezsc@ezsc:/var/www/html/workshops/silex$
+```
+
+You should already be on the **01-no-esi** branch, with all vendors available,
+Up to branch **02-no-less**, need to :
+```bash
+composer update oyejorge/less.php
+```
+
+Exercises
+---
+
+#### From 01-no-esi
+
+* Finalize the AJAX call, add **"/renderesi"** route to **controllers.php**
+* Add **"/esi"** route to **controllers.php**, with TTL cache
+* Add entry to the **menu.yaml**
+* Add template code to the **main.twig**
+
+To speed up, checkout the **02-no-less** branch
+
+#### From 02-no-less
+
+* Add **"oyejorge/less.php": "~1.5"** to composer.json & update
+* Create the **LessProvider**, both **register** & **boot** methods
+* Register the provider in **app.php**
+* Play with **variables.less** to check everything works fine
+
+To speed up, checkout the **03-final** branch
+
+Enjoy !
