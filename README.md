@@ -14,7 +14,7 @@ Branch topics :
 ---
 
 * Branch **master** is empty
-* Branch **01-no-esi** is the starting point if the workshop. The AJAX call is in progress (/renderesi route is missing), no ESI setup, no .less compilation
+* Branch **01-no-esi** is the starting point of the workshop. The AJAX call is in progress (/renderesi route is missing), no ESI setup, no .less compilation
 * Branch **02-no-less** is the same code, containing AJAX & ESI setup example
 * Branch **03-final** is the final code, containing the .less processing for bootstrap
 
@@ -48,10 +48,10 @@ Exercises
 
 #### From 01-no-esi
 
-* Finalize the AJAX call, add "/renderesi" route to controllers.php
-* Add "/esi" route to controllers.php, with TTL cache
-* Add entry to the menu.yaml
-* Add template code to the main.twig
+* Finalize the AJAX call, add **"/renderesi"** route to **controllers.php**
+* Add **"/esi"** route to **controllers.php**, with TTL cache
+* Add entry to the **menu.yaml**
+* Add template code to the **main.twig**
 
 To speed up, checkout the **02-no-less** branch
 
@@ -65,19 +65,3 @@ To speed up, checkout the **02-no-less** branch
 To speed up, checkout the **03-final** branch
 
 Enjoy !
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -11,6 +11,10 @@ RUN apt-get install -y python-software-properties software-properties-common
 # RUN apt-get -y dist-upgrade
 RUN apt-get install -y php5-fpm nginx supervisor curl php5-cli
 
+# install composer
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/bin/composer
+
 # Setup config files
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD ./nginx/default /etc/nginx/sites-enabled/default
